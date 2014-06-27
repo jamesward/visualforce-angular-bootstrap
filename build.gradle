@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.jamesward:force-gradle-plugin:0.1'
+    }
+}
+
+apply plugin: 'force'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+force {
+    username = forceUsername
+    password = forcePassword
+    unpackagedComponents = ["ApexPage": "Hello", "CustomTab": "Hello"]
+    //unpackagedComponents = ["ApexPage": "Hello", "CustomTab": "Hello", "AppMenu": "*"]
+}
